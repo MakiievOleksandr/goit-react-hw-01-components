@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 import UserProfile from './userProfile/UserProfile';
 import Statistics from './statistics/StatsList';
+import FriendList from './friends/FriendList';
 import userData from '../user.json';
 import statsData from '../data.json';
+import friendsData from '../friends.json';
 
 export default function App() {
   return (
@@ -15,8 +17,8 @@ export default function App() {
         stats={userData.stats}
       />
       <Statistics title="Upload stats" stats={statsData} />
-      {/* <FriendList friends={friendsData} />
-      <TransactionHistory items={transactions} /> */}
+      <FriendList friends={friendsData} />
+      {/* <TransactionHistory items={transactions} /> */}
     </div>
   );
 }
