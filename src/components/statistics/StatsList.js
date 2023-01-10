@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import DataItem from '../dataItem/DataItem';
-import css from './Stats.module.css';
+import { Statistics, StatList, Title } from './StatsList.styled';
 
 export default function Statistic({ title, stats }) {
   return (
-    <section className={css.statistics}>
-      {title && <h2 className={css.title}>{title}</h2>}
+    <Statistics>
+      {title && <Title>{title}</Title>}
 
-      <ul className={css.statList}>
+      <StatList>
         {stats.map(stat => (
           <DataItem
             key={stat.id}
@@ -15,8 +15,8 @@ export default function Statistic({ title, stats }) {
             percentage={stat.percentage}
           />
         ))}
-      </ul>
-    </section>
+      </StatList>
+    </Statistics>
   );
 }
 

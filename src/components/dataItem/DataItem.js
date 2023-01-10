@@ -1,17 +1,16 @@
-import css from './DataItem.module.css';
 import getRandomHexColor from 'utils/randomHexColor';
+import { DataLabel, Item, Percentage } from './DataItem.styled';
 
 export default function DataItem({ label, percentage }) {
   return (
-    <li
-      className={css.item}
+    <Item
       style={{
         width: 100 + 'vw',
         backgroundColor: getRandomHexColor(),
       }}
     >
-      <span className={css.label}>{label}</span>
-      <span className={css.percentage}>{percentage}</span>
-    </li>
+      <DataLabel>{label}</DataLabel>
+      <Percentage>{percentage}</Percentage>
+    </Item>
   );
 }
