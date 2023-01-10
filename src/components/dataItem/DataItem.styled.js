@@ -8,6 +8,7 @@ export const Item = styled.li`
   font-size: 24px;
   font-weight: 500;
   color: white;
+  border: 1px solid black;
   border-radius: 0 0 5px 5px;
 `;
 
