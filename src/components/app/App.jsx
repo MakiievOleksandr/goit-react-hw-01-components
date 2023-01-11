@@ -1,4 +1,4 @@
-import PropTypes, { shape } from 'prop-types';
+import PropTypes from 'prop-types';
 import UserProfile from '../userProfile/UserProfile';
 import Statistics from '../statistics/StatsList';
 import FriendList from '../friends/FriendList';
@@ -36,15 +36,4 @@ UserProfile.propTypes = {
     views: PropTypes.number,
     likes: PropTypes.number,
   }),
-};
-
-TransactionHistory.propTypes = {
-  items: PropTypes.arrayOf(
-    shape({
-      type: PropTypes.string.isRequired,
-      amount: PropTypes.string.isRequired,
-      currency: PropTypes.string.isRequired,
-      id: PropTypes.string.isRequired,
-    })
-  ),
 };

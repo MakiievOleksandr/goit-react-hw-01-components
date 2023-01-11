@@ -10,9 +10,9 @@ export default function Statistic({ title, stats }) {
       <StatList>
         {stats.map(stat => (
           <DataItem
-            key={stat.id}
             label={stat.label}
             percentage={stat.percentage}
+            key={stat.id}
           />
         ))}
       </StatList>

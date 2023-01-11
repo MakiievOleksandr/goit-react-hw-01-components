@@ -1,3 +1,5 @@
+import PropTypes, { shape } from 'prop-types';
+
 import {
   TableData,
   TableHeader,
@@ -27,3 +29,14 @@ export default function TransactionHistory({ items }) {
     </Transactions>
   );
 }
+
+TransactionHistory.propTypes = {
+  items: PropTypes.arrayOf(
+    shape({
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+    })
+  ),
+};
