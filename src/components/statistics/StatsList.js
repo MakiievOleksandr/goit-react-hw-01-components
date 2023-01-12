@@ -8,12 +8,8 @@ export default function Statistic({ title, stats }) {
       {title && <Title>{title}</Title>}
 
       <StatList>
-        {stats.map(stat => (
-          <DataItem
-            label={stat.label}
-            percentage={stat.percentage}
-            key={stat.id}
-          />
+        {stats.map(({ id, label, percentage }) => (
+          <DataItem label={label} percentage={percentage} key={id} />
         ))}
       </StatList>
     </Statistics>
@@ -21,7 +17,11 @@ export default function Statistic({ title, stats }) {
 }
 
 Statistic.propTypes = {
-  key: PropTypes.string,
-  label: PropTypes.string,
-  percentage: PropTypes.number,
+  stats: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ),
 };

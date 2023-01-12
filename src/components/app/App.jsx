@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import UserProfile from '../userProfile/UserProfile';
 import Statistics from '../statistics/StatsList';
 import FriendList from '../friends/FriendList';
@@ -25,15 +24,3 @@ export default function App() {
     </Container>
   );
 }
-
-UserProfile.propTypes = {
-  username: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
-  stats: PropTypes.shape({
-    followers: PropTypes.number,
-    views: PropTypes.number,
-    likes: PropTypes.number,
-  }),
-};
